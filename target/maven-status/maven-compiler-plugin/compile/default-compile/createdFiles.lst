@@ -1,0 +1,7 @@
+com\sstufinder\main\repository\TestRepository.class
+com\sstufinder\main\service\TestService.class
+com\sstufinder\main\service\TestServiceImpl.class
+com\sstufinder\main\model\TestModel$TestModelBuilder.class
+com\sstufinder\main\SstuFinderMainApplication.class
+com\sstufinder\main\controller\TestController.class
+com\sstufinder\main\model\TestModel.class
