@@ -1,12 +1,11 @@
 package com.sstufinder.main.model;
 
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.persistence.*;
 
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 @ToString
 @Getter
@@ -16,7 +15,7 @@ import javax.persistence.*;
 public class StudentModel {
 
     @Id
-    @GeneratedValue()
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "student_id")
     private long id;
 

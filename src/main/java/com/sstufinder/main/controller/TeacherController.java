@@ -14,12 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/teacher")
 public class TeacherController {
-    @Autowired
-    TeacherServiceImpl teacherService;
-
-    @GetMapping("/teach")
-    ResponseEntity<TeacherModel> findByLoginPassword(@RequestParam String login, @RequestParam String password){
-        return  new ResponseEntity<>(teacherService.findByLoginPassword(login, password), HttpStatus.OK);
-    }
+//    @Autowired
+//    TeacherServiceImpl teacherService;
+//
+//    @GetMapping("/teach")
+//    ResponseEntity<TeacherModel> findByLoginPassword(@RequestParam String login, @RequestParam String password){
+//        return  new ResponseEntity<>(teacherService.findByLoginPassword(login, password), HttpStatus.OK);
+//    }
 
 }

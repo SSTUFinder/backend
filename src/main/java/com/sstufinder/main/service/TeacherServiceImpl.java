@@ -11,15 +11,15 @@ public class TeacherServiceImpl implements TeacherService{
     @Autowired
     TeacherRepository teacherRepository;
 
-    @Override
-    public String saveTeacher(TeacherModel teacherModel) {
-        teacherRepository.save(teacherModel);
-        return "save";
-    }
+//    @Override
+//    public String saveTeacher(TeacherModel teacherModel) {
+//        teacherRepository.save(teacherModel);
+//        return "save";
+//    }
 
-    @Override
-    public TeacherModel findByLoginPassword(String login, String password) {
-
-        return teacherRepository.findByLoginPassword(login, password);
-    }
+//    @Override
+//    public TeacherModel findByLoginPassword(String login, String password) {
+//
+////        return teacherRepository.findByLoginPassword(login);
+//    }
 }

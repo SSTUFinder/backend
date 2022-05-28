@@ -4,7 +4,9 @@ import com.sstufinder.main.model.TeacherModel;
 
 public interface TeacherService {
 
-    TeacherModel findByLoginPassword(String login, String password);
 
-    String saveTeacher(TeacherModel teacherModel);
+
+//    TeacherModel findByLoginPassword(String login, String password);
+
+//    String saveTeacher(TeacherModel teacherModel);
 }
