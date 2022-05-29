@@ -1,7 +1,6 @@
 package com.sstufinder.main.controller;
 
-import com.sstufinder.main.model.EventModel;
-import com.sstufinder.main.service.EventService;
+import com.sstufinder.main.repository.SimpleEvent;
 import com.sstufinder.main.service.EventServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +16,7 @@ public class EventController {
     EventServiceImpl eventService;
 
     @GetMapping("/events")
-    public ResponseEntity<List<EventModel>> findAll(){
+    public ResponseEntity<List<SimpleEvent>> findAll(){
         return ResponseEntity.ok(eventService.findAll());
     }
 }

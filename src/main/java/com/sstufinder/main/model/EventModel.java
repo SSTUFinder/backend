@@ -9,12 +9,10 @@ import java.util.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ToString
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name = "event")
-public class EventModel implements Serializable{
+public class EventModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,10 +31,10 @@ public class EventModel implements Serializable{
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "student_id")
-    private StudentModel studentModels;
+    private StudentModel studentModel;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "teacher_id")
-    private TeacherModel teacherModels;
+    private TeacherModel teacherModel;
 
 }
