@@ -30,4 +30,10 @@ public class EventController {
         else{return ResponseEntity.badRequest().body("Ошибка в добавлении мероприятия");
         }
     }
+
+    @DeleteMapping("/delete")
+    public ResponseEntity<String> deleteEvent(@RequestParam String id){
+        eventService.deleteEvent(Long.parseLong(id));
+        return ResponseEntity.ok().body("Мероприятие успешно удалено");
+    }
 }

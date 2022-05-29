@@ -20,4 +20,9 @@ public class UserServiceImpl {
             return studentRepository.findById(id); }
         else{ return teacherRepository.findById(id); }
     }
+
+    public void saveReason(long id, String reason) {
+        studentRepository.updateStudentReasonById(id, reason);
+    }
+
 }

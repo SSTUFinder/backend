@@ -21,6 +21,12 @@ public class EventModel {
     @Column(name = "place", nullable = false)
     private String place;
 
+    @Column(name = "title", nullable = false)
+    private String title;
+
+    @Column(name = "description", nullable = false)
+    private String description;
+
     //localdatetime
     @Column(name = "time_spending", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)

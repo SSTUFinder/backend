@@ -34,4 +34,8 @@ public class EventServiceImpl implements EventService{
         if (Objects.isNull(tmp)) {return true;}
         return  false;
     }
+
+    public void deleteEvent(long id) {
+        eventRepository.deleteById(id);
+    }
 }

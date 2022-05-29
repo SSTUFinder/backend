@@ -44,17 +44,23 @@ public class TestController {
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-        EventModel eventModel1 = EventModel.builder().place("1/416").
+        EventModel eventModel1 = EventModel.builder().title("День программиста").
+                description("Тут мы прозднуем день косманавта, приходи").
+                place("1/416").
                 publicationTime(simpleDateFormat.parse("2022-05-15 08:00:00")).
                 timeSpending(simpleDateFormat.parse("2022-05-20 18:00:00")).
                 studentModel(studentModel1).build();
 
-        EventModel eventModel2 = EventModel.builder().place("1/417").
+        EventModel eventModel2 = EventModel.builder().title("День заОЧниКОв").
+                description("Ты появляешься раз в полгода?. Ну так загляни еще раз, но пораньше. Ждем вас заОЧниКОв").
+                place("1/417").
                 publicationTime(simpleDateFormat.parse("2022-05-05 08:00:00")).
                 timeSpending(simpleDateFormat.parse("2022-05-09 18:00:00")).
                 studentModel(studentModel1).build();
 
-        EventModel eventModel3 = EventModel.builder().place("1/418").
+        EventModel eventModel3 = EventModel.builder().title("День очника").
+                description("Устал ходить на пары, ну так приди к нам, у нас тут плойка и телек большой и диваны удобные.").
+                place("1/418").
                 publicationTime(simpleDateFormat.parse("2022-05-01 08:00:00")).
                 timeSpending(simpleDateFormat.parse("2022-05-30 18:00:00")).
                 studentModel(studentModel1).build();

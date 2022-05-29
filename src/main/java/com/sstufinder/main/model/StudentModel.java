@@ -46,8 +46,4 @@ public class StudentModel {
     @JsonIgnore
     @OneToMany(mappedBy = "studentModel", cascade = CascadeType.ALL)
     private List<EventModel> eventModels;
-
-    public StudentModel(long id) {
-        this.id = id;
-    }
 }

@@ -16,6 +16,7 @@ public interface EventRepository extends JpaRepository<EventModel, Long> {
 
     EventModel save(EventModel eventModel);
 
+    void deleteById(long id);
 //    @Query("select event.id, event.place, event.publicationTime, event.timeSpending from EventModel event")
 //    List<EventModel> findAll();
 

@@ -13,6 +13,12 @@ public class UserController {
     @Autowired
     UserServiceImpl userService;
 
+    @PutMapping("/{id}")
+    ResponseEntity<String> saveReason(@PathVariable String id, @RequestParam String reason ){
+        userService.saveReason(Long.parseLong(id), reason);
+        return ResponseEntity.ok().body("Ваша причина была услышана. В ближайшее время ее расмотрим");
+    }
+
 
     @GetMapping("/{id}")
     ResponseEntity<Object> findById(@PathVariable String id, @RequestParam String role){
