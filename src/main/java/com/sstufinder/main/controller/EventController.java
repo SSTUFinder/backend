@@ -19,4 +19,6 @@ public class EventController {
     public ResponseEntity<List<SimpleEvent>> findAll(){
         return ResponseEntity.ok(eventService.findAll());
     }
+
+    //просто по id удалить event
 }
