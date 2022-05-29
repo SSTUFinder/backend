@@ -13,7 +13,7 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "student")
-public class StudentModel{
+public class StudentModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,11 +37,12 @@ public class StudentModel{
     @Column(name = "record_book_number", unique = true, nullable = false)
     private String recordBookNumber;
 
+
+
     @Column(name = "upgrade_tier", nullable = false)
     private boolean upgradeTier;
 
-//    @JsonIgnore
     @OneToMany(mappedBy = "studentModel", cascade = CascadeType.ALL)
     private List<EventModel> eventModels;
 
-    }
+}

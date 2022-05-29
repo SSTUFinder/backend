@@ -21,6 +21,7 @@ public class EventModel {
     @Column(name = "place", nullable = false)
     private String place;
 
+    //localdatetime
     @Column(name = "time_spending", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private java.util.Date timeSpending;
