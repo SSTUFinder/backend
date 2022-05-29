@@ -46,9 +46,9 @@ public class TestController {
         StudentModel studentModel3 = StudentModel.builder().login("student2").password("zxc").firstname("Rinat").lastname("zxc").email("zxccc@gmail.com").recordBookNumber("193302").upgradeTier(false).build();
 
 
-        EventModel eventModel1 = EventModel.builder().place("1:416").publicationTime(new Timestamp(2022, 05, 05, 8,00, 00,0)).timeSpending(new Timestamp(2022, 05, 05, 18,00, 00,0)).studentModels(studentModel1).build();
-        EventModel eventModel2 = EventModel.builder().place("1:417").publicationTime(new Timestamp(2022, 05, 10, 8,00, 00,0)).timeSpending(new Timestamp(2022, 05, 10, 18,00, 00,0)).studentModels(studentModel1).build();
-        EventModel eventModel3 = EventModel.builder().place("1:418").publicationTime(new Timestamp(2022, 05, 20, 8,00, 00,0)).timeSpending(new Timestamp(2022, 05, 20, 18,00, 00,0)).teacherModels(teacherModel3).build();
+        EventModel eventModel1 = EventModel.builder().place("1:416").publicationTime(new Timestamp(2022, 05, 05, 8,00, 00,0)).timeSpending(new Timestamp(2022, 05, 05, 18,00, 00,0)).studentModel(studentModel1).build();
+        EventModel eventModel2 = EventModel.builder().place("1:417").publicationTime(new Timestamp(2022, 05, 10, 8,00, 00,0)).timeSpending(new Timestamp(2022, 05, 10, 18,00, 00,0)).studentModel(studentModel1).build();
+        EventModel eventModel3 = EventModel.builder().place("1:418").publicationTime(new Timestamp(2022, 05, 20, 8,00, 00,0)).timeSpending(new Timestamp(2022, 05, 20, 18,00, 00,0)).teacherModel(teacherModel3).build();
 
 
 

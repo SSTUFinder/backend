@@ -10,12 +10,10 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-@ToString
-@Getter
-@Setter
+@Data
 @Entity
 @Table(name = "student")
-public class StudentModel implements Serializable{
+public class StudentModel{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -42,13 +40,8 @@ public class StudentModel implements Serializable{
     @Column(name = "upgrade_tier", nullable = false)
     private boolean upgradeTier;
 
-    public StudentModel(String firstname, String lastname) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-    }
-
-    @JsonIgnore
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "studentModels", cascade = CascadeType.ALL)
+//    @JsonIgnore
+    @OneToMany(mappedBy = "studentModel", cascade = CascadeType.ALL)
     private List<EventModel> eventModels;
 
     }

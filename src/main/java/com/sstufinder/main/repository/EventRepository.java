@@ -10,9 +10,10 @@ import java.util.List;
 @Repository
 public interface EventRepository extends JpaRepository<EventModel, Long> {
 
-    @Query("select event, student.firstname, student.lastname, teacher.firstname, teacher.lastname  from EventModel event, StudentModel student, TeacherModel teacher")
-    List<EventModel> findAll();
+    @Query("select event from EventModel event")
+    List<SimpleEvent> findAllEventWithName();
 
-    List<EventModel> findAll
+//    @Query("select event.id, event.place, event.publicationTime, event.timeSpending from EventModel event")
+//    List<EventModel> findAll();
 
 }
