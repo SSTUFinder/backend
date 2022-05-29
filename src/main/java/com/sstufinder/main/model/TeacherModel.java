@@ -33,6 +33,7 @@ public class TeacherModel {
     @Column(name = "email", unique = true, nullable = false)
     private String email;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "teacherModel", cascade = CascadeType.ALL)
     private List<EventModel> eventModel;
 

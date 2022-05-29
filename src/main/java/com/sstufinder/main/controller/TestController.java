@@ -6,19 +6,15 @@ import com.sstufinder.main.model.TeacherModel;
 import com.sstufinder.main.repository.EventRepository;
 import com.sstufinder.main.repository.StudentRepository;
 import com.sstufinder.main.repository.TeacherRepository;
-import com.sstufinder.main.service.TeacherServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.sql.Timestamp;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 
 @RestController
 @RequestMapping("/test")
@@ -35,26 +31,33 @@ public class TestController {
 
 
     @GetMapping("/data")
-    public String feelTeacherData(){
+    public String feelTeacherData() throws ParseException {
+
 
         TeacherModel teacherModel1 =TeacherModel.builder().login("rinocraft").password("123").firstname("Rinat").lastname("Yagudin").email("rina@gmail.com").build();
         TeacherModel teacherModel2 =TeacherModel.builder().login("qwerty").password("qwe").firstname("Rinat").lastname("Yagudin").email("qwe@gmail.com").build();
         TeacherModel teacherModel3 =TeacherModel.builder().login("zxc").password("zxc").firstname("zxc").lastname("SF").email("zxcSF@gmail.com").build();
 
         StudentModel studentModel1 = StudentModel.builder().login("rinocraft").password("123").firstname("Rinat").lastname("Yagudin").email("rina@gmail.com").recordBookNumber("193300").upgradeTier(true).build();
-        StudentModel studentModel2 = StudentModel.builder().login("student1").password("qwe").firstname("Denis").lastname("qwe").email("qweee@gmail.com").recordBookNumber("193301").upgradeTier(false).build();
-        StudentModel studentModel3 = StudentModel.builder().login("student2").password("zxc").firstname("Rinat").lastname("zxc").email("zxccc@gmail.com").recordBookNumber("193302").upgradeTier(false).build();
+        StudentModel studentModel2 = StudentModel.builder().login("student1").password("qwe").firstname("Denis").lastname("qwe").email("qweee@gmail.com").recordBookNumber("193301").build();
+        StudentModel studentModel3 = StudentModel.builder().login("student2").password("zxc").firstname("Rinat").lastname("zxc").email("zxccc@gmail.com").recordBookNumber("193302").build();
 
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-        EventModel eventModel1 = EventModel.builder().place("1:416").publicationTime(new Timestamp(2022, 05, 05, 8,00, 00,0)).timeSpending(new Timestamp(2022, 05, 05, 18,00, 00,0)).studentModel(studentModel1).build();
-        EventModel eventModel2 = EventModel.builder().place("1:417").publicationTime(new Timestamp(2022, 05, 10, 8,00, 00,0)).timeSpending(new Timestamp(2022, 05, 10, 18,00, 00,0)).studentModel(studentModel1).build();
-        EventModel eventModel3 = EventModel.builder().place("1:418").publicationTime(new Timestamp(2022, 05, 20, 8,00, 00,0)).timeSpending(new Timestamp(2022, 05, 20, 18,00, 00,0)).teacherModel(teacherModel3).build();
+        EventModel eventModel1 = EventModel.builder().place("1/416").
+                publicationTime(simpleDateFormat.parse("2022-05-15 08:00:00")).
+                timeSpending(simpleDateFormat.parse("2022-05-20 18:00:00")).
+                studentModel(studentModel1).build();
 
+        EventModel eventModel2 = EventModel.builder().place("1/417").
+                publicationTime(simpleDateFormat.parse("2022-05-05 08:00:00")).
+                timeSpending(simpleDateFormat.parse("2022-05-09 18:00:00")).
+                studentModel(studentModel1).build();
 
-
-//        studentModel1.setEventModels(Arrays.asList(eventModel1, eventModel2));
-////        studentModel1.setEventModelList(Arrays.asList(eventModel2));
-//        teacherModel3.setEventModels(Arrays.asList(eventModel3));
+        EventModel eventModel3 = EventModel.builder().place("1/418").
+                publicationTime(simpleDateFormat.parse("2022-05-01 08:00:00")).
+                timeSpending(simpleDateFormat.parse("2022-05-30 18:00:00")).
+                studentModel(studentModel1).build();
 
         eventRepository.save(eventModel1);
         eventRepository.save(eventModel2);

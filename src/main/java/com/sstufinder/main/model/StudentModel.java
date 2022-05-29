@@ -19,30 +19,35 @@ public class StudentModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @Column(name = "login", unique = true, nullable = false)
+    @Column(name = "login",length = 50,unique = true, nullable = false)
     private String login;
 
-    @Column(name = "firstname", nullable = false)
+    @Column(name = "firstname", length = 50,nullable = false)
     private String firstname;
 
-    @Column(name = "lastname", nullable = false)
+    @Column(name = "lastname", length = 50, nullable = false)
     private String lastname;
 
-    @Column(name = "password", nullable = false)
+    @Column(name = "password", length = 50, nullable = false)
     private String password;
 
-    @Column(name = "email", unique = true, nullable = false)
+    @Column(name = "email", length = 50, unique = true, nullable = false)
     private String email;
 
-    @Column(name = "record_book_number", unique = true, nullable = false)
+    @Column(name = "record_book_number", length = 8, unique = true, nullable = false)
     private String recordBookNumber;
 
-
+    @Column(name = "reason")
+    private String reason;
 
     @Column(name = "upgrade_tier", nullable = false)
     private boolean upgradeTier;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "studentModel", cascade = CascadeType.ALL)
     private List<EventModel> eventModels;
 
+    public StudentModel(long id) {
+        this.id = id;
+    }
 }

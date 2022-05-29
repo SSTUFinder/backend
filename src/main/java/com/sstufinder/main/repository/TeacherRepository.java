@@ -13,4 +13,9 @@ public interface TeacherRepository extends JpaRepository<TeacherModel, Long> {
 
     boolean existsByEmail(String email);
     boolean existsByLogin(String login);
+
+    @Query("select teacher from TeacherModel teacher where teacher.id = ?1")
+    TeacherInfo findById(long id);
+
+    TeacherModel findAllById(long id);
 }

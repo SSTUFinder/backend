@@ -30,7 +30,7 @@ public class EventModel {
     @Temporal(TemporalType.TIMESTAMP)
     private java.util.Date publicationTime;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "student_id")
     private StudentModel studentModel;
 
