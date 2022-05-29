@@ -30,15 +30,10 @@ public class TeacherModel {
     @Column(name = "password", nullable = false)
     private String password;
 
-    public TeacherModel(String firstname, String lastname) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-    }
-
     @Column(name = "email", unique = true, nullable = false)
     private String email;
 
-//    @JsonIgnore
+    @JsonIgnore
     @OneToMany(mappedBy = "teacherModel", cascade = CascadeType.ALL)
     private List<EventModel> eventModel;
 

@@ -21,6 +21,13 @@ public class EventModel {
     @Column(name = "place", nullable = false)
     private String place;
 
+    @Column(name = "title", nullable = false)
+    private String title;
+
+    @Column(name = "description", nullable = false)
+    private String description;
+
+    //localdatetime
     @Column(name = "time_spending", nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
     private java.util.Date timeSpending;
@@ -29,7 +36,7 @@ public class EventModel {
     @Temporal(TemporalType.TIMESTAMP)
     private java.util.Date publicationTime;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "student_id")
     private StudentModel studentModel;
 
