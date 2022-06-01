@@ -7,8 +7,7 @@ public interface SimpleEvent {
     String getTitle();
     String getDescription();
     String getPlace();
-    java.util.Date getTimeSpending();
-    java.util.Date getPublicationTime();
+    String getTime();
     StudentName getStudentModel();
     TeacherName getTeacherModel();
 }

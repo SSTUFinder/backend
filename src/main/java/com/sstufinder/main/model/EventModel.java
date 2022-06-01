@@ -28,13 +28,8 @@ public class EventModel {
     private String description;
 
     //localdatetime
-    @Column(name = "time_spending", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private java.util.Date timeSpending;
-
-    @Column(name = "publication_time", nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private java.util.Date publicationTime;
+    @Column(name = "time", nullable = false)
+    private String time;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "student_id")
