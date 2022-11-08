@@ -1,0 +1,23 @@
+version: '3.2'
+services:
+  app:
+    build: ./
+    ports:
+        - '8080:8080'
+    container_name: app
+    environment:
+      - spring.datasource.url=jdbc:postgresql://sstu-finder_db:5432/sstu-finder-db
+      - spring.datasource.username=sstuuser
+      - spring.datasource.password=123456
+      - spring.jpa.hibernate.ddl-auto=update
+    depends_on:
+      - sstu-finder_db
+
+  sstu-finder_db:
+    image: 'postgres:13.2'
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=sstuuser
+      - POSTGRES_PASSWORD=123456
+      - POSTGRES_DB=sstu-finder-db
